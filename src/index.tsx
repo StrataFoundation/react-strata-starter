@@ -1,8 +1,15 @@
+import { Buffer } from "buffer";
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+if (typeof window !== "undefined") {
+  window.Buffer = Buffer;
+} else {
+  global.Buffer = Buffer;
+}
 
 ReactDOM.render(
   <React.StrictMode>
